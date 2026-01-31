@@ -1,0 +1,170 @@
+.navbar {
+    background-image: linear-gradient(to left top, cyan, darkblue);
+    background-size: cover;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-bottom: 2rem;
+    /* Transisi untuk navbar */
+    transition: all 0.4s ease;
+}
+
+.navbar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.navbar img {
+    width: 150px;
+    border-radius: 50px;
+    /* Transisi untuk gambar */
+    transition: all 0.5s ease;
+}
+
+.navbar img:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.navbar p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    /* Animasi teks */
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    /* Transisi untuk container */
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.experience, .skill, .language, .education, .contact, .social {
+    background-image: linear-gradient(to left top, cyan, darkblue);
+    background-size: cover;
+    border-radius: 15px;
+    padding: 1.8rem;
+    box-shadow: 0 8px 20px rgba(70, 97, 232, 0.752);
+    border-top: 5px solid;
+    border-color: darkcyan;
+    /* Transisi untuk semua kartu */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform: translateY(0);
+    opacity: 0;
+    animation: slideUp 0.6s ease-out forwards;
+}
+
+/* Delay animasi untuk setiap kartu */
+.experience { animation-delay: 0.4s; }
+.skill { animation-delay: 0.5s; }
+.language { animation-delay: 0.6s; }
+.education { animation-delay: 0.7s; }
+.contact { animation-delay: 0.8s; }
+.social { animation-delay: 0.9s; }
+
+.experience:hover, .skill:hover, .language:hover, 
+.education:hover, .contact:hover, .social:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(70, 97, 232, 0.9);
+    border-color: cyan;
+}
+
+.a-experience, .a-skill, .a-language, .a-education, .a-contact, .a-social {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    /* Transisi untuk link */
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.a-experience:hover, .a-skill:hover, .a-language:hover,
+.a-education:hover, .a-contact:hover, .a-social:hover {
+    color: cyan;
+    transform: translateX(5px);
+}
+
+/* Efek underline animasi */
+.a-experience::after, .a-skill::after, .a-language::after,
+.a-education::after, .a-contact::after, .a-social::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: cyan;
+    transition: width 0.3s ease;
+}
+
+.a-experience:hover::after, .a-skill:hover::after, .a-language:hover::after,
+.a-education:hover::after, .a-contact:hover::after, .a-social:hover::after {
+    width: 100%;
+}
+
+/* Animasi keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animasi untuk border atas */
+.experience::before, .skill::before, .language::before,
+.education::before, .contact::before, .social::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background: linear-gradient(90deg, cyan, darkcyan);
+    border-radius: 15px 15px 0 0;
+    transition: width 0.4s ease;
+}
+
+.experience:hover::before, .skill:hover::before, .language:hover::before,
+.education:hover::before, .contact:hover::before, .social:hover::before {
+    width: 100%;
+}
